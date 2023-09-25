@@ -2,6 +2,10 @@
 
 namespace API.Models;
 
+/*
+ * Class Model untuk konfigurasi table account roles yang diturunkan dari class AbstractModel
+ */
+
 [Table("tb_m_account_roles")]
 public class AccountRole
 {

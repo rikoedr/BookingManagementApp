@@ -2,6 +2,10 @@
 
 namespace API.Models;
 
+/*
+ * Class Model untuk konfigurasi table bookings yang diturunkan dari class AbstractModel
+ */
+
 [Table("tb_tr_bookings")]
 public class Booking
 {

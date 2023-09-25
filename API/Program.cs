@@ -1,3 +1,5 @@
+using API.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -23,3 +25,11 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+University university = new University();
+
+university.Name = "Unsrat";
+university.Guid = new Guid();
+
+Console.Write(university.Name);
+Console.Write(university.Guid);

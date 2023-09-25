@@ -2,6 +2,10 @@
 
 namespace API.Models;
 
+/*
+ * Class Model untuk konfigurasi table employee yang diturunkan dari class AbstractModel
+ */
+
 [Table("tb_m_employees")]
 public class Employee
 {

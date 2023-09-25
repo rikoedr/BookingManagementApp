@@ -2,8 +2,12 @@
 
 namespace API.Models;
 
+/*
+ * Class Model untuk konfigurasi table accounts yang diturunkan dari class AbstractModel
+ */
+
 [Table("tb_m_accounts")]
-public class Account : AbstractEntity
+public class Account : AbstractModel
 {
     [Column("password", TypeName = "nvarchar(max)")]
     public string Password { get; set; }

@@ -2,6 +2,10 @@
 
 namespace API.Model;
 
+/*
+ * Class Model untuk konfigurasi table rooms yang diturunkan dari class AbstractModel
+ */
+
 [Table("tb_m_rooms")]
 public class Room {
     [Column("name", TypeName = "nvarchar(100)")]

@@ -2,8 +2,12 @@
 
 namespace API.Models;
 
+/*
+ * Class Model untuk konfigurasi table education yang diturunkan dari class AbstractModel
+ */
+
 [Table("tb_m_educations")]
-public class Education : AbstractEntity
+public class Education : AbstractModel
 {
     [Column("major", TypeName = "nvarchar(100)")]
     public string Major { get; set; }
