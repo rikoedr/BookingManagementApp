@@ -20,5 +20,8 @@ public class Education : AbstractModel
 
     [Column("university_guid", TypeName = "uniqueidentifier")]
     public Guid UniversityGuid { get; set; }
-
+    
+    // Cardinality : Many to One
+    public University? University { get; set; }
+    public Employee? Employee { get; set; }
 }

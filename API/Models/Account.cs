@@ -21,6 +21,10 @@ public class Account : AbstractModel
     [Column("is_used", TypeName = "bit")]
     public Boolean IsUsed { get; set; }
 
-    [Column("expired_time", TypeName = "datetime2")]
+    [Column("expired_time", TypeName = "datetime")]
     public DateTime ExpiredTime { get; set; }
+
+    // Cardinality
+    public Employee? Employee { get; set; }
+    public ICollection<AccountRole>? AccountRoles { get; set; }
 }

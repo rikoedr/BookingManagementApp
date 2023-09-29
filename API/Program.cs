@@ -1,8 +1,17 @@
+using API;
+using API.Contracts;
+using API.Data;
 using API.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<BookingManagementDbContext>(option => option.UseSqlServer(connectionString));
+
+// Add repositories to the controller
+builder.Services.AddScoped<IUniversityRepository, UniversityRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -25,11 +34,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-University university = new University();
-
-university.Name = "Unsrat";
-university.Guid = new Guid();
-
-Console.Write(university.Name);
-Console.Write(university.Guid);

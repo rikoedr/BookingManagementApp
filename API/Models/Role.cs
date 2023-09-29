@@ -7,8 +7,11 @@ namespace API.Models;
  */
 
 [Table("tb_m_roles")]
-public class Role
+public class Role : AbstractModel
 {
     [Column("name", TypeName = "nvarchar(100)")]
     public string Name { get; set; }
+
+    // Cardinality
+    public ICollection<AccountRole>? AccountRoles { get; set; }
 }

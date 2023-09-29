@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using API.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Model;
 
@@ -7,7 +8,7 @@ namespace API.Model;
  */
 
 [Table("tb_m_rooms")]
-public class Room {
+public class Room : AbstractModel{
     [Column("name", TypeName = "nvarchar(100)")]
     public string Name { get; set; }
 
@@ -16,4 +17,7 @@ public class Room {
 
     [Column("capacity", TypeName = "int")]
     public int Capacity { get; set; }
+
+    // Cardinality
+    public ICollection<Booking>? Bookings { get; set; }
 }
