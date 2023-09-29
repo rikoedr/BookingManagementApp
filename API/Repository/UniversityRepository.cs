@@ -2,7 +2,7 @@
 using API.Data;
 using API.Models;
 
-namespace API;
+namespace API.Repository;
 
 public class UniversityRepository : IUniversityRepository
 {
