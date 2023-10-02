@@ -16,7 +16,7 @@ public class Education : AbstractModel
     public string Degree { get; set; }
 
     [Column("gpa", TypeName = "real")]
-    public Boolean Gpa { get; set; }
+    public float Gpa { get; set; }
 
     [Column("university_guid", TypeName = "uniqueidentifier")]
     public Guid UniversityGuid { get; set; }

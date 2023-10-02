@@ -4,36 +4,35 @@ using API.Models;
 
 namespace API.Repository;
 
-public class UniversityRepository : ITableRepository<University>
+public class EducationRepository : ITableRepository<Education>
 {
     private readonly BookingManagementDbContext _context;
 
-    public UniversityRepository(BookingManagementDbContext context)
+    public EducationRepository(BookingManagementDbContext context)
     {
         _context = context;
     }
 
-    public University? Create(University entity)
+    public Education? Create(Education entity)
     {
         try
         {
-            _context.Set<University>().Add(entity);
+            _context.Set<Education>().Add(entity);
             _context.SaveChanges();
 
             return entity;
         }
-        catch(Exception ex)
+        catch
         {
-            Console.WriteLine(ex.Message);
             return null;
         }
     }
 
-    public bool Delete(University entity)
+    public bool Delete(Education entity)
     {
         try
         {
-            _context.Set<University>().Remove(entity);
+            _context.Set<Education>().Remove(entity);
             _context.SaveChanges();
 
             return true;
@@ -44,21 +43,21 @@ public class UniversityRepository : ITableRepository<University>
         }
     }
 
-    public IEnumerable<University> GetAll()
+    public IEnumerable<Education> GetAll()
     {
-        return _context.Set<University>().ToList();
+        return _context.Set<Education>().ToList();
     }
 
-    public University? GetByGuid(Guid guid)
+    public Education? GetByGuid(Guid guid)
     {
-        return _context.Set<University>().Find(guid);
+        return _context.Set<Education>().Find(guid);
     }
 
-    public bool Update(University entity)
+    public bool Update(Education entity)
     {
         try
         {
-            _context.Set<University>().Update(entity);
+            _context.Set<Education>().Update(entity);
             _context.SaveChanges();
 
             return true;

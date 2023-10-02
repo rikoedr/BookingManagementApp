@@ -1,39 +1,39 @@
 ﻿using API.Contracts;
 using API.Data;
 using API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Repository;
 
-public class UniversityRepository : ITableRepository<University>
+public class AccountRepository : ITableRepository<Account>
 {
     private readonly BookingManagementDbContext _context;
 
-    public UniversityRepository(BookingManagementDbContext context)
+    public AccountRepository(BookingManagementDbContext context)
     {
         _context = context;
     }
-
-    public University? Create(University entity)
+    public Account? Create(Account entity)
     {
         try
         {
-            _context.Set<University>().Add(entity);
+            _context.Set<Account>().Add(entity);
             _context.SaveChanges();
 
             return entity;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
             return null;
         }
     }
 
-    public bool Delete(University entity)
+    public bool Delete(Account entity)
     {
         try
         {
-            _context.Set<University>().Remove(entity);
+            _context.Set<Account>().Remove(entity);
             _context.SaveChanges();
 
             return true;
@@ -44,21 +44,21 @@ public class UniversityRepository : ITableRepository<University>
         }
     }
 
-    public IEnumerable<University> GetAll()
+    public IEnumerable<Account> GetAll()
     {
-        return _context.Set<University>().ToList();
+        return _context.Set<Account>().ToList();
     }
 
-    public University? GetByGuid(Guid guid)
+    public Account? GetByGuid(Guid guid)
     {
-        return _context.Set<University>().Find(guid);
+        return _context.Set<Account>().Find(guid);
     }
 
-    public bool Update(University entity)
+    public bool Update(Account entity)
     {
         try
         {
-            _context.Set<University>().Update(entity);
+            _context.Set<Account>().Update(entity);
             _context.SaveChanges();
 
             return true;
